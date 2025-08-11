@@ -325,13 +325,13 @@ export default function Home() {
               {
                 title: t.blog.posts.nextjs.title,
                 excerpt: t.blog.posts.nextjs.excerpt,
-                date: "2024.01.10",
+                date: "2025.08.11",
                 readTime: "8분"
               },
               {
                 title: t.blog.posts.tailwind.title,
                 excerpt: t.blog.posts.tailwind.excerpt,
-                date: "2024.01.05",
+                date: "2025.08.12",
                 readTime: "6분"
               }
             ].map((post, index) => (
