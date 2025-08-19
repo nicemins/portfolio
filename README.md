@@ -73,7 +73,4 @@ portfolio-pm/
 - 헤더/푸터 로고 텍스트: `src/app/page.tsx`
 - 다국어 텍스트: `src/app/translations.ts`
 
-## 배포
-
-- Vercel 배포를 권장합니다. 자세한 내용은 Next.js 배포 문서를 참고하세요: https://nextjs.org/docs/app/building-your-application/deploying
 
