@@ -4,7 +4,6 @@ export interface Translations {
   ko: {
     nav: {
       about: string;
-      work: string;
       blog: string;
       gallery: string;
     };
@@ -26,7 +25,7 @@ export interface Translations {
         growth: string;
       };
     };
-    work: {
+    blog: {
       title: string;
       projects: {
         todo: {
@@ -42,24 +41,6 @@ export interface Translations {
           description: string;
         };
       };
-    };
-    blog: {
-      title: string;
-      posts: {
-        firstProject: {
-          title: string;
-          excerpt: string;
-        };
-        nextjs: {
-          title: string;
-          excerpt: string;
-        };
-        tailwind: {
-          title: string;
-          excerpt: string;
-        };
-      };
-      readMore: string;
     };
     gallery: {
       title: string;
@@ -78,7 +59,6 @@ export interface Translations {
   ja: {
     nav: {
       about: string;
-      work: string;
       blog: string;
       gallery: string;
     };
@@ -100,7 +80,7 @@ export interface Translations {
         growth: string;
       };
     };
-    work: {
+    blog: {
       title: string;
       projects: {
         todo: {
@@ -116,24 +96,6 @@ export interface Translations {
           description: string;
         };
       };
-    };
-    blog: {
-      title: string;
-      posts: {
-        firstProject: {
-          title: string;
-          excerpt: string;
-        };
-        nextjs: {
-          title: string;
-          excerpt: string;
-        };
-        tailwind: {
-          title: string;
-          excerpt: string;
-        };
-      };
-      readMore: string;
     };
     gallery: {
       title: string;
@@ -152,7 +114,6 @@ export interface Translations {
   en: {
     nav: {
       about: string;
-      work: string;
       blog: string;
       gallery: string;
     };
@@ -174,7 +135,7 @@ export interface Translations {
         growth: string;
       };
     };
-    work: {
+    blog: {
       title: string;
       projects: {
         todo: {
@@ -190,24 +151,6 @@ export interface Translations {
           description: string;
         };
       };
-    };
-    blog: {
-      title: string;
-      posts: {
-        firstProject: {
-          title: string;
-          excerpt: string;
-        };
-        nextjs: {
-          title: string;
-          excerpt: string;
-        };
-        tailwind: {
-          title: string;
-          excerpt: string;
-        };
-      };
-      readMore: string;
     };
     gallery: {
       title: string;
@@ -229,7 +172,6 @@ export const translations: Translations = {
   ko: {
     nav: {
       about: 'About',
-      work: 'Work',
       blog: 'Blog',
       gallery: 'Gallery',
     },
@@ -242,49 +184,33 @@ export const translations: Translations = {
     about: {
       title: 'About',
       subtitle: 'Junior Developer',
-      description1: '신입 개발자로서 새로운 기술을 배우고 적용하는 것에 대한 열정을 가지고 있습니다. 아직 부족한 점이 많지만, 꾸준한 학습과 실습을 통해 성장해나가고 있습니다.',
-      description2: 'React, Next.js, JavaScript 등 프론트엔드 기술을 중심으로 학습하고 있으며, 백엔드 개발에도 관심을 가지고 Node.js, Python 등을 공부하고 있습니다.',
+      description1:
+        '신입 개발자로서 새로운 기술을 배우고 적용하는 것에 대한 열정을 가지고 있습니다. 아직 부족한 점이 많지만, 꾸준한 학습과 실습을 통해 성장해나가고 있습니다.',
+      description2:
+        'React, Next.js, JavaScript 등 프론트엔드 기술을 중심으로 학습하고 있으며, 백엔드 개발에도 관심을 가지고 Node.js, Java, Spring 등을 공부하고 있습니다.',
       stats: {
-        learning: 'Year Learning',
-        projects: 'Projects',
-        technologies: 'Technologies',
-        growth: 'Growth Mindset',
+        learning: '학습 기간',
+        projects: '프로젝트',
+        technologies: '기술',
+        growth: '성장 마인드셋',
       },
     },
-    work: {
-      title: 'Work',
+    blog: {
+      title: 'Blog',
       projects: {
         todo: {
-          title: 'Todo App',
-          description: 'React와 localStorage를 활용한 간단한 할일 관리 애플리케이션',
+          title: 'DSUGraduate App',
+          description: 'Android Studio와 Java로 제작한 졸업 도우미 앱',
         },
         portfolio: {
           title: 'Portfolio Website',
           description: 'Next.js와 Tailwind CSS로 제작한 개인 포트폴리오 웹사이트',
         },
         weather: {
-          title: 'Weather App',
-          description: 'OpenWeather API를 활용한 날씨 정보 애플리케이션',
+          title: 'Shooting Game',
+          description: 'JavaScript로 제작한 간단한 슈팅게임',
         },
       },
-    },
-    blog: {
-      title: 'Blog',
-      posts: {
-        firstProject: {
-          title: '신입 개발자의 첫 번째 프로젝트 후기',
-          excerpt: 'React로 첫 번째 프로젝트를 만들면서 겪은 어려움과 해결 과정, 그리고 배운 점들을 정리했습니다.',
-        },
-        nextjs: {
-          title: 'Next.js 입문기 - App Router 사용해보기',
-          excerpt: 'Next.js 13+의 새로운 App Router를 학습하면서 겪은 시행착오와 기본적인 사용법을 정리했습니다.',
-        },
-        tailwind: {
-          title: 'Tailwind CSS로 빠르게 UI 만들기',
-          excerpt: 'CSS 프레임워크를 처음 사용해보면서 느낀 장점과 기본적인 사용법을 정리했습니다.',
-        },
-      },
-      readMore: '더 읽기 →',
     },
     gallery: {
       title: 'Gallery',
@@ -297,155 +223,126 @@ export const translations: Translations = {
         blog: 'Blog',
         email: 'Email',
       },
-      copyright: '© 2025 portfolio-pm. Junior Developer Portfolio',
+      copyright:
+        '© 2025 portfolio-pm. 주니어 개발자 포트폴리오',
     },
   },
   ja: {
     nav: {
       about: 'About',
-      work: 'Work',
       blog: 'Blog',
       gallery: 'Gallery',
     },
     hero: {
-      greeting: 'こんにちは PMです',
-      description: '新入社員開発者として情熱と学習の姿勢で成長している最中です',
+      greeting: 'こんにちは、PMです',
+      description: '新入開発者として情熱と学習姿勢を持って成長しています',
       viewProjects: 'プロジェクトを見る',
       downloadResume: '履歴書をダウンロード',
     },
     about: {
       title: 'About',
       subtitle: 'Junior Developer',
-      description1: '新入社員開発者として新しい技術を学び、適用することへの情熱を持っています。まだ不足している点が多いですが、継続的な学習と実践を通じて成長しています。',
-      description2: 'React、Next.js、JavaScriptなどのフロントエンド技術を中心に学習しており、バックエンド開発にも興味を持ち、Node.js、Pythonなどを勉強しています。',
+      description1:
+        '新入開発者として新しい技術を学び、適用することに情熱を持っています。まだ不足している点も多いですが、継続的な学習と実践を通じて成長しています。',
+      description2:
+        'React、Next.js、JavaScriptなどのフロントエンド技術を中心に学習しており、バックエンド開発にも興味を持ち、Node.js、Java、Springなどを勉強しています。',
       stats: {
-        learning: '学習年数',
+        learning: '学習期間',
         projects: 'プロジェクト',
         technologies: '技術',
         growth: '成長マインドセット',
       },
     },
-    work: {
-      title: 'Work',
+    blog: {
+      title: 'Blog',
       projects: {
         todo: {
-          title: 'Todo App',
-          description: 'ReactとlocalStorageを活用したシンプルなタスク管理アプリケーション',
+          title: 'DSUGraduate App',
+          description: 'Android StudioとJavaで制作した卒業サポートアプリ',
         },
         portfolio: {
           title: 'Portfolio Website',
-          description: 'Next.jsとTailwind CSSで制作した個人ポートフォリオウェブサイト',
+          description: 'Next.jsとTailwind CSSで制作した個人ポートフォリオサイト',
         },
         weather: {
-          title: 'Weather App',
-          description: 'OpenWeather APIを活用した天気情報アプリケーション',
+          title: 'Shooting Game',
+          description: 'JavaScriptで制作したシンプルなシューティングゲーム',
         },
       },
-    },
-    blog: {
-      title: 'Blog',
-      posts: {
-        firstProject: {
-          title: '新入社員開発者の最初のプロジェクト後記',
-          excerpt: 'Reactで最初のプロジェクトを作りながら経験した困難と解決過程、そして学んだことをまとめました。',
-        },
-        nextjs: {
-          title: 'Next.js入門 - App Routerを使ってみる',
-          excerpt: 'Next.js 13+の新しいApp Routerを学習しながら経験した試行錯誤と基本的な使用方法をまとめました。',
-        },
-        tailwind: {
-          title: 'Tailwind CSSで素早くUIを作る',
-          excerpt: 'CSSフレームワークを初めて使ってみて感じた利点と基本的な使用方法をまとめました。',
-        },
-      },
-      readMore: 'もっと読む →',
     },
     gallery: {
       title: 'Gallery',
     },
     footer: {
-      description: '新入社員開発者として継続的に成長している最中です',
+      description: '新入開発者として継続的に成長しています',
       links: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         blog: 'Blog',
         email: 'Email',
       },
-      copyright: '© 2025 portfolio-pm. Junior Developer Portfolio',
+      copyright:
+        '© 2025 portfolio-pm. ジュニア開発者ポートフォリオ',
     },
   },
   en: {
     nav: {
       about: 'About',
-      work: 'Work',
       blog: 'Blog',
       gallery: 'Gallery',
     },
     hero: {
-      greeting: 'Hello I\'m PM',
-      description: 'As a junior developer, I\'m growing with passion and a learning mindset',
+      greeting: "Hello, I'm PM",
+      description:
+        "As a junior developer, I'm growing with passion and a learning mindset",
       viewProjects: 'View Projects',
       downloadResume: 'Download Resume',
     },
     about: {
       title: 'About',
       subtitle: 'Junior Developer',
-      description1: 'As a junior developer, I have a passion for learning and applying new technologies. While I still have many areas to improve, I\'m growing through continuous learning and practice.',
-      description2: 'I\'m focusing on frontend technologies like React, Next.js, and JavaScript, and I\'m also interested in backend development, studying Node.js, Python, and more.',
+      description1:
+        'As a junior developer, I have a passion for learning and applying new technologies. While I still have many areas to improve, I am growing through continuous learning and practice.',
+      description2:
+        'I am focusing on frontend technologies such as React, Next.js, and JavaScript, while also studying backend development with Node.js, Java, Spring, and more.',
       stats: {
-        learning: 'Year Learning',
+        learning: 'Learning Period',
         projects: 'Projects',
         technologies: 'Technologies',
         growth: 'Growth Mindset',
       },
     },
-    work: {
-      title: 'Work',
+    blog: {
+      title: 'Blog',
       projects: {
         todo: {
-          title: 'Todo App',
-          description: 'A simple task management application using React and localStorage',
+          title: 'DSUGraduate App',
+          description: 'A graduation assistant app built with Android Studio and Java',
         },
         portfolio: {
           title: 'Portfolio Website',
-          description: 'Personal portfolio website built with Next.js and Tailwind CSS',
+          description: 'A personal portfolio website built with Next.js and Tailwind CSS',
         },
         weather: {
-          title: 'Weather App',
-          description: 'Weather information application using OpenWeather API',
+          title: 'Shooting Game',
+          description: 'A simple shooting game built with JavaScript',
         },
       },
-    },
-    blog: {
-      title: 'Blog',
-      posts: {
-        firstProject: {
-          title: 'My First Project as a Junior Developer',
-          excerpt: 'I\'ve documented the difficulties I faced, the problem-solving process, and what I learned while creating my first React project.',
-        },
-        nextjs: {
-          title: 'Getting Started with Next.js - Using App Router',
-          excerpt: 'I\'ve documented the trial and error I experienced and basic usage while learning the new App Router in Next.js 13+.',
-        },
-        tailwind: {
-          title: 'Building UI Quickly with Tailwind CSS',
-          excerpt: 'I\'ve documented the advantages I felt and basic usage when first using a CSS framework.',
-        },
-      },
-      readMore: 'Read More →',
     },
     gallery: {
       title: 'Gallery',
     },
     footer: {
-      description: 'As a junior developer, I\'m continuously growing and learning',
+      description:
+        "As a junior developer, I'm continuously learning and growing",
       links: {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         blog: 'Blog',
         email: 'Email',
       },
-      copyright: '© 2025 portfolio-pm. Junior Developer Portfolio',
+      copyright:
+        '© 2025 portfolio-pm. Junior Developer Portfolio',
     },
   },
 };

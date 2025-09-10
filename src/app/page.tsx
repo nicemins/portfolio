@@ -60,11 +60,6 @@ export default function Home() {
                     ? 'text-slate-300 hover:text-white' 
                     : 'text-slate-600 hover:text-slate-800'
                 }`}>{t.nav.about}</a>
-                <a href="#work" className={`transition-colors ${
-                  isDarkMode 
-                    ? 'text-slate-300 hover:text-white' 
-                    : 'text-slate-600 hover:text-slate-800'
-                }`}>{t.nav.work}</a>
                 <a href="#blog" className={`transition-colors ${
                   isDarkMode 
                     ? 'text-slate-300 hover:text-white' 
@@ -218,7 +213,7 @@ export default function Home() {
               <div className={`p-6 rounded-lg text-center ${
                 isDarkMode ? 'bg-slate-800' : 'bg-slate-100'
               }`}>
-                <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
+                <div className="text-3xl font-bold text-purple-600 mb-2">3+</div>
                 <div className={`${
                   isDarkMode ? 'text-slate-300' : 'text-slate-600'
                 }`}>{t.about.stats.projects}</div>
@@ -226,7 +221,7 @@ export default function Home() {
               <div className={`p-6 rounded-lg text-center ${
                 isDarkMode ? 'bg-slate-800' : 'bg-slate-100'
               }`}>
-                <div className="text-3xl font-bold text-green-600 mb-2">3+</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">5+</div>
                 <div className={`${
                   isDarkMode ? 'text-slate-300' : 'text-slate-600'
                 }`}>{t.about.stats.technologies}</div>
@@ -244,29 +239,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Work Section */}
-      <section id="work" className="py-20 px-6">
+      {/* Blog Section */}
+      <section id="blog" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className={`text-4xl font-bold text-center mb-16 ${
             isDarkMode ? 'text-white' : 'text-slate-800'
-          }`}>{t.work.title}</h2>
+          }`}>{t.blog.title}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: t.work.projects.todo.title,
-                description: t.work.projects.todo.description,
-                tech: ["React", "JavaScript", "CSS"],
+                title: t.blog.projects.todo.title,
+                description: t.blog.projects.todo.description,
+                tech: ["Java", "Android Studio", "Firebase"],
                 image: "/next.svg"
               },
               {
-                title: t.work.projects.portfolio.title,
-                description: t.work.projects.portfolio.description,
+                title: t.blog.projects.portfolio.title,
+                description: t.blog.projects.portfolio.description,
                 tech: ["Next.js", "Tailwind CSS", "TypeScript"],
                 image: "/vercel.svg"
               },
               {
-                title: t.work.projects.weather.title,
-                description: t.work.projects.weather.description,
+                title: t.blog.projects.weather.title,
+                description: t.blog.projects.weather.description,
                 tech: ["HTML", "CSS", "JavaScript"],
                 image: "/globe.svg"
               }
@@ -306,60 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section id="blog" className={`py-20 px-6 transition-colors duration-300 ${
-        isDarkMode ? 'bg-slate-900' : 'bg-white'
-      }`}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className={`text-4xl font-bold text-center mb-16 ${
-            isDarkMode ? 'text-white' : 'text-slate-800'
-          }`}>{t.blog.title}</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: t.blog.posts.firstProject.title,
-                excerpt: t.blog.posts.firstProject.excerpt,
-                date: "2025.08.10",
-                readTime: "5분"
-              },
-              {
-                title: t.blog.posts.nextjs.title,
-                excerpt: t.blog.posts.nextjs.excerpt,
-                date: "2025.08.11",
-                readTime: "8분"
-              },
-              {
-                title: t.blog.posts.tailwind.title,
-                excerpt: t.blog.posts.tailwind.excerpt,
-                date: "2025.08.12",
-                readTime: "6분"
-              }
-            ].map((post, index) => (
-              <article key={index} className={`rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 ${
-                isDarkMode ? 'bg-slate-800' : 'bg-slate-50'
-              }`}>
-                <div className="mb-4">
-                  <span className={`text-sm ${
-                    isDarkMode ? 'text-slate-400' : 'text-slate-500'
-                  }`}>{post.date}</span>
-                  <span className={`text-sm ml-4 ${
-                    isDarkMode ? 'text-slate-400' : 'text-slate-500'
-                  }`}>• {post.readTime}</span>
-                </div>
-                <h3 className={`text-xl font-semibold mb-3 ${
-                  isDarkMode ? 'text-white' : 'text-slate-800'
-                }`}>{post.title}</h3>
-                <p className={`mb-4 ${
-                  isDarkMode ? 'text-slate-300' : 'text-slate-600'
-                }`}>{post.excerpt}</p>
-                <a href="#" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">
-                  {t.blog.readMore}
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 px-6">
