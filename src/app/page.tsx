@@ -34,6 +34,18 @@ export default function Home() {
     setCurrentLanguage(lang);
   };
 
+  // 갤러리 이미지 경로 (public/gallery)
+  const galleryImages = [
+    "/gallery/01.jpg",
+    "/gallery/02.jpg",
+    "/gallery/03.jpg",
+    "/gallery/04.jpg",
+    "/gallery/05.jpg",
+    "/gallery/06.jpg",
+    "/gallery/07.jpg",
+    "/gallery/08.jpg",
+  ];
+
   return (
     <div className={`min-h-screen transition-colors duration-300 ${
       isDarkMode 
@@ -310,9 +322,19 @@ export default function Home() {
             isDarkMode ? 'text-white' : 'text-slate-800'
           }`}>{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {Array.from({ length: 8 }, (_, i) => (
-              <div key={i} className="aspect-square bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-800 dark:to-purple-800 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-300">
-                <span className="text-2xl font-bold text-white">IMG {i + 1}</span>
+            {galleryImages.map((src, i) => (
+              <div
+                key={i}
+                className="aspect-square overflow-hidden rounded-lg hover:scale-105 transition-transform duration-300 bg-slate-200 dark:bg-slate-800"
+              >
+                <Image
+                  src={src}
+                  alt={`Gallery ${i + 1}`}
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                  unoptimized
+                />
               </div>
             ))}
           </div>
@@ -325,8 +347,7 @@ export default function Home() {
           <div className="text-2xl font-bold mb-4">portfolio-pm</div>
           <p className="text-slate-400 mb-8">{t.footer.description}</p>
           <div className="flex justify-center space-x-6 mb-8">
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.github}</a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.linkedin}</a>
+            <a href="https://github.com/nicemins" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.github}</a>
             <a href="#" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.blog}</a>
             <a href="#" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.email}</a>
           </div>
