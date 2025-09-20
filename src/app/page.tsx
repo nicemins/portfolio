@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { translations, type Language } from "./translations";
 
@@ -72,11 +73,11 @@ export default function Home() {
                     ? 'text-slate-300 hover:text-white' 
                     : 'text-slate-600 hover:text-slate-800'
                 }`}>{t.nav.about}</a>
-                <a href="#blog" className={`transition-colors ${
+                <Link href="/blog" className={`transition-colors ${
                   isDarkMode 
                     ? 'text-slate-300 hover:text-white' 
                     : 'text-slate-600 hover:text-slate-800'
-                }`}>{t.nav.blog}</a>
+                }`}>{t.nav.blog}</Link>
                 <a href="#gallery" className={`transition-colors ${
                   isDarkMode 
                     ? 'text-slate-300 hover:text-white' 
@@ -175,9 +176,12 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <Link 
+              href="/blog"
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 text-center"
+            >
               {t.hero.viewProjects}
-            </button>
+            </Link>
             <button className={`px-8 py-4 border-2 rounded-full font-semibold text-lg transition-colors ${
               isDarkMode 
                 ? 'border-slate-600 text-slate-300 hover:bg-slate-800' 
@@ -254,33 +258,53 @@ export default function Home() {
       {/* Blog Section */}
       <section id="blog" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className={`text-4xl font-bold text-center mb-16 ${
-            isDarkMode ? 'text-white' : 'text-slate-800'
-          }`}>{t.blog.title}</h2>
+          <div className="text-center mb-16">
+            <h2 className={`text-4xl font-bold mb-4 ${
+              isDarkMode ? 'text-white' : 'text-slate-800'
+            }`}>{t.blog.title}</h2>
+            <Link 
+              href="/blog" 
+              className={`inline-flex items-center text-lg font-medium transition-colors ${
+                isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-500'
+              }`}
+            >
+              {t.blog.viewAllProjects}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: t.blog.projects.todo.title,
                 description: t.blog.projects.todo.description,
                 tech: ["Java", "Android Studio", "Firebase"],
-                image: "/next.svg"
+                image: "/next.svg",
+                slug: "dsugraduate"
               },
               {
                 title: t.blog.projects.portfolio.title,
                 description: t.blog.projects.portfolio.description,
                 tech: ["Next.js", "Tailwind CSS", "TypeScript"],
-                image: "/vercel.svg"
+                image: "/vercel.svg",
+                slug: "portfolio"
               },
               {
                 title: t.blog.projects.weather.title,
                 description: t.blog.projects.weather.description,
                 tech: ["HTML", "CSS", "JavaScript"],
-                image: "/globe.svg"
+                image: "/globe.svg",
+                slug: "shooting-game"
               }
             ].map((project, index) => (
-              <div key={index} className={`rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden ${
-                isDarkMode ? 'bg-slate-900' : 'bg-white'
-              }`}>
+              <Link 
+                key={index} 
+                href={`/blog/${project.slug}`}
+                className={`rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:scale-105 ${
+                  isDarkMode ? 'bg-slate-900' : 'bg-white'
+                }`}
+              >
                 <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
                   <Image
                     src={project.image}
@@ -297,7 +321,7 @@ export default function Home() {
                   <p className={`mb-4 ${
                     isDarkMode ? 'text-slate-300' : 'text-slate-600'
                   }`}>{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech, techIndex) => (
                       <span key={techIndex} className={`px-3 py-1 rounded-full text-sm ${
                         isDarkMode ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-600'
@@ -306,8 +330,13 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
+                  <div className={`text-sm font-medium ${
+                    isDarkMode ? 'text-blue-400' : 'text-blue-600'
+                  }`}>
+                    자세히 보기 →
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -349,7 +378,7 @@ export default function Home() {
           <div className="flex justify-center space-x-6 mb-8">
             <a href="https://github.com/nicemins" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.github}</a>
             <a href="#" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.blog}</a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.email}</a>
+            <a href="mailto:nicemins1@gmail.com" className="text-slate-400 hover:text-white transition-colors">{t.footer.links.email}</a>
           </div>
           <div className="text-slate-500 text-sm">
             {t.footer.copyright}
